@@ -1,7 +1,11 @@
+import Tracker from "./components/Tracker";
+import Map from "./components/Map";
+
 const App = () => {
   return (
-    <div>
-      <h3>Hello React !!</h3>
+    <div className="container">
+      <Tracker />
+      <Map />
     </div>
   );
 };
