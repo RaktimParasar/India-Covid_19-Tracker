@@ -9,13 +9,16 @@ export const fetchData = async () => {
     const {
       data: { statewise },
     } = await axios.get(urlData);
-    const totalActive = statewise[0].active;
-    const totalConfirmed = statewise[0].confirmed;
-    const totalDeceased = statewise[0].deaths;
-    const totalRecovered = statewise[0].recovered;
-    return { totalActive, totalConfirmed, totalDeceased, totalRecovered };
-  } catch (err) {
-    console.log(err.message);
+    const { active, confirmed, deaths, recovered } = statewise[0];
+
+    return {
+      active,
+      confirmed,
+      deaths,
+      recovered,
+    };
+  } catch (error) {
+    console.log(error);
   }
 };
 

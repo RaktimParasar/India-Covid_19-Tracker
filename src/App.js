@@ -1,21 +1,28 @@
-import { useEffect } from "react";
+import React from "react";
 
 import Tracker from "./components/Tracker";
 import Map from "./components/Map";
 import { fetchData } from "./api";
 
-const App = () => {
-  useEffect(() => {
-    const data = fetchData();
-    console.log("data: ", data);
-  }, []);
+class App extends React.Component {
+  state = {
+    data: {},
+  };
 
-  return (
-    <div className="container">
-      <Tracker />
-      <Map />
-    </div>
-  );
-};
+  async componentDidMount() {
+    const data = await fetchData();
+    this.setState({ data });
+  }
+
+  render() {
+    const { data } = this.state;
+    return (
+      <div className="container">
+        <Tracker data={data} />
+        <Map />
+      </div>
+    );
+  }
+}
 
 export default App;

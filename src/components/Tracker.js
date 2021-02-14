@@ -1,5 +1,6 @@
 import india from "../assets/india.svg";
-const Tracker = () => {
+
+const Tracker = ({ data: { active, confirmed, deaths, recovered } }) => {
   return (
     <div>
       <header className="header">
@@ -18,6 +19,18 @@ const Tracker = () => {
           </p>
         </div>
       </header>
+      <div>
+        {active ? (
+          <>
+            <h4>active: {active}</h4>
+            <h4>confirmed: {confirmed}</h4>
+            <h4>deceased: {deaths}</h4>
+            <h4>recovered: {recovered}</h4>
+          </>
+        ) : (
+          <p>loading...</p>
+        )}
+      </div>
     </div>
   );
 };
