@@ -1,10 +1,12 @@
 import india from "../assets/india.svg";
 // import Countup from "react-countup";
-import { Doughnut } from "react-chartjs-2";
+import { Doughnut, Line } from "react-chartjs-2";
 
-const Tracker = ({ data: { active, confirmed, deaths, recovered } }) => {
+const Tracker = ({
+  data: { active, confirmed, deaths, recovered, sevenData },
+}) => {
   //data for Doughnut chart
-  const data = {
+  const DoughnutData = {
     labels: ["recovered", "active", "deaths"],
     datasets: [
       {
@@ -26,7 +28,7 @@ const Tracker = ({ data: { active, confirmed, deaths, recovered } }) => {
   };
 
   //customize Doughnut chart
-  const option = {
+  const DoughnutOptions = {
     cutoutPercentage: 80,
     legend: {
       position: "right",
@@ -34,6 +36,57 @@ const Tracker = ({ data: { active, confirmed, deaths, recovered } }) => {
   };
 
   //Line chart
+  const LineData = {
+    labels: sevenData && sevenData.map(({ date }) => date),
+    datasets: [
+      {
+        label: "Confirmed",
+        data:
+          sevenData &&
+          sevenData
+            .map(({ totalConfirmed }) => totalConfirmed)
+            .map((el) => Number(el)),
+        fill: false,
+        backgroundColor: "rgb(255, 99, 132)",
+        borderColor: "rgba(255, 99, 132, 0.5)",
+      },
+      {
+        label: "Recovered",
+        data:
+          sevenData &&
+          sevenData
+            .map(({ totalRecovered }) => totalRecovered)
+            .map((el) => Number(el)),
+        fill: false,
+        backgroundColor: "rgb(6, 107, 33)",
+        borderColor: "rgba(6, 107, 33, 0.5)",
+      },
+      {
+        label: "Deceased",
+        data:
+          sevenData &&
+          sevenData
+            .map(({ totalDeceased }) => totalDeceased)
+            .map((el) => Number(el)),
+        fill: false,
+        backgroundColor: "rgb(81, 84, 82)",
+        borderColor: "rgba(81, 84, 82, 0.5)",
+      },
+    ],
+  };
+
+  // const LineOptions = {
+  //   scales: {
+  //     yAxes: [
+  //       {
+  //         ticks: {
+  //           beginAtZero: true,
+  //         },
+  //       },
+  //     ],
+  //   },
+  // };
+
   return (
     <div>
       <header className="header">
@@ -53,14 +106,15 @@ const Tracker = ({ data: { active, confirmed, deaths, recovered } }) => {
         </div>
       </header>
       <div className="chart-container">
-        <Doughnut data={data} options={option} />
+        <Doughnut data={DoughnutData} options={DoughnutOptions} />
         {/* TODO: add nummbers with countup */}
         <div>
           <p>{confirmed}</p>
           <p>confirmed</p>
         </div>
       </div>
-      <div>Line chart</div>
+      <Line data={LineData} />
+      {/* {TODO: style changes} */}
     </div>
   );
 };
