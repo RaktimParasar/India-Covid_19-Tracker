@@ -27,19 +27,20 @@ export const fetchData = async () => {
       deaths,
       recovered,
       sevenData,
+      statewise,
     };
   } catch (error) {
     console.log(error);
   }
 };
 
-//fetch from urlState
-// export const fetchStates = async () => {
-//   try {
-//     const response = await axios.get(urlData);
+//fetch from urlTable Data
+export const fetchTabel = async () => {
+  try {
+    const response = await axios.get(urlData);
 
-//     return response;
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// };
+    return response;
+  } catch (err) {
+    console.log(err.message);
+  }
+};

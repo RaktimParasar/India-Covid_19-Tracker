@@ -1,9 +1,10 @@
 import india from "../assets/india.svg";
 // import Countup from "react-countup";
 import { Doughnut, Line } from "react-chartjs-2";
+import Table from "./Table";
 
 const Tracker = ({
-  data: { active, confirmed, deaths, recovered, sevenData },
+  data: { active, confirmed, deaths, recovered, sevenData, statewise },
 }) => {
   //data for Doughnut chart
   const DoughnutData = {
@@ -113,8 +114,11 @@ const Tracker = ({
           <p>confirmed</p>
         </div>
       </div>
-      <Line data={LineData} />
-      {/* {TODO: style changes} */}
+      <div>
+        <Line data={LineData} />
+        {/* {TODO: style changes} */}
+      </div>
+      <Table tableData={statewise} />
     </div>
   );
 };
