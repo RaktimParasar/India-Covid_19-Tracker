@@ -1,6 +1,39 @@
 import india from "../assets/india.svg";
+// import Countup from "react-countup";
+import { Doughnut } from "react-chartjs-2";
 
 const Tracker = ({ data: { active, confirmed, deaths, recovered } }) => {
+  //data for Doughnut chart
+  const data = {
+    labels: ["recovered", "active", "deaths"],
+    datasets: [
+      {
+        label: "# of Votes",
+        data: [recovered, active, deaths],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  //customize Doughnut chart
+  const option = {
+    cutoutPercentage: 80,
+    legend: {
+      position: "right",
+    },
+  };
+
+  //Line chart
   return (
     <div>
       <header className="header">
@@ -19,18 +52,15 @@ const Tracker = ({ data: { active, confirmed, deaths, recovered } }) => {
           </p>
         </div>
       </header>
-      <div>
-        {active ? (
-          <>
-            <h4>active: {active}</h4>
-            <h4>confirmed: {confirmed}</h4>
-            <h4>deceased: {deaths}</h4>
-            <h4>recovered: {recovered}</h4>
-          </>
-        ) : (
-          <p>loading...</p>
-        )}
+      <div className="chart-container">
+        <Doughnut data={data} options={option} />
+        {/* TODO: add nummbers with countup */}
+        <div>
+          <p>{confirmed}</p>
+          <p>confirmed</p>
+        </div>
       </div>
+      <div>Line chart</div>
     </div>
   );
 };
