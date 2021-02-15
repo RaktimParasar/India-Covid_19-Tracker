@@ -1,7 +1,7 @@
 import Countup from "react-countup";
-
+import Chloropeth from "./Chloropeth";
 const Map = ({
-  data: { active, confirmed, deaths, recovered, lastupdatedtime },
+  data: { active, confirmed, deaths, recovered, lastupdatedtime, statewise },
 }) => {
   return (
     <div>
@@ -71,9 +71,9 @@ const Map = ({
             <p>{lastupdatedtime}</p>
           </div>
         </section>
-        {/* <section>
-          <C
-        </section> */}
+        <section className="chloropeth">
+          <Chloropeth mapData={statewise} />
+        </section>
       </div>
     </div>
   );

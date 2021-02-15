@@ -1,6 +1,6 @@
 import React from "react";
 
-import Tracker from "./components/Tracker";
+// import Tracker from "./components/Tracker";
 import Map from "./components/Map";
 import { fetchData } from "./api";
 
@@ -18,7 +18,7 @@ class App extends React.Component {
     const { data } = this.state;
     return (
       <div className="container">
-        <Tracker data={data} />
+        {/* <Tracker data={data} /> */}
         <Map data={data} />
       </div>
     );

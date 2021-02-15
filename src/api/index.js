@@ -40,14 +40,3 @@ export const fetchData = async () => {
     console.log(error);
   }
 };
-
-//fetch from urlTable Data
-export const fetchTabel = async () => {
-  try {
-    const response = await axios.get(urlData);
-
-    return response;
-  } catch (err) {
-    console.log(err.message);
-  }
-};

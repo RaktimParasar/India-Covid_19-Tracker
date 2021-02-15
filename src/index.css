@@ -21,3 +21,8 @@ body {
 .boxes {
   display: flex;
 }
+
+.chloropeth {
+  height: 80rem;
+  width: 80rem;
+}
