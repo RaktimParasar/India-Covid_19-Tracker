@@ -19,7 +19,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Tracker data={data} />
-        <Map />
+        <Map data={data} />
       </div>
     );
   }

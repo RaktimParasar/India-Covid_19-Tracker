@@ -18,3 +18,6 @@ body {
   width: 280px;
   height: 280px;
 }
+.boxes {
+  display: flex;
+}

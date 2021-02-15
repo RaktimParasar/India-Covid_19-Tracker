@@ -9,7 +9,13 @@ export const fetchData = async () => {
     const {
       data: { statewise, cases_time_series },
     } = await axios.get(urlData);
-    const { active, confirmed, deaths, recovered } = statewise[0];
+    const {
+      active,
+      confirmed,
+      deaths,
+      recovered,
+      lastupdatedtime,
+    } = statewise[0];
 
     const lastSevenDays = cases_time_series.map((data) => ({
       totalConfirmed: data.totalconfirmed,
@@ -26,6 +32,7 @@ export const fetchData = async () => {
       confirmed,
       deaths,
       recovered,
+      lastupdatedtime,
       sevenData,
       statewise,
     };
