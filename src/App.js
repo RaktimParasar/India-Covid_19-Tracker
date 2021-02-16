@@ -23,7 +23,11 @@ class App extends React.Component {
     const { data, stateName } = this.state;
     return (
       <div className="container">
-        <Tracker data={data} handleMouseEnter={this.handleMouseEnter} />
+        <Tracker
+          data={data}
+          stateName={stateName}
+          handleMouseEnter={this.handleMouseEnter}
+        />
         <Map data={data} stateName={stateName} />
       </div>
     );

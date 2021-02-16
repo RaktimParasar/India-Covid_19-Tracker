@@ -14,6 +14,7 @@ const Map = ({
       stateActive: el.active,
       stateDeaths: el.deaths,
       stateRecovered: el.recovered,
+      stateUpdateTime: el.lastupdatedtime,
     }));
 
   return (
@@ -95,10 +96,10 @@ const Map = ({
           </div>
         </section>
         <section className="boxes">
-          <h3>India</h3>
+          <h3>{stateName ? stateName : "India"}</h3>
           <div>
             <h3>Last updated</h3>
-            <p>{lastupdatedtime}</p>
+            <p>{stateName ? stateData[0].stateUpdateTime : lastupdatedtime}</p>
           </div>
         </section>
         <section className="chloropeth">

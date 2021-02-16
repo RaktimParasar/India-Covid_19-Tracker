@@ -6,14 +6,31 @@ import Table from "./Table";
 const Tracker = ({
   data: { active, confirmed, deaths, recovered, sevenData, statewise },
   handleMouseEnter,
+  stateName,
 }) => {
+  const singleState =
+    statewise && statewise.filter((items) => items.state === stateName);
+
+  const stateData =
+    singleState &&
+    singleState.map((el) => ({
+      stateConfirm: el.confirmed,
+      stateActive: el.active,
+      stateDeaths: el.deaths,
+      stateRecovered: el.recovered,
+      stateUpdateTime: el.lastupdatedtime,
+    }));
   //data for Doughnut chart
   const DoughnutData = {
-    labels: [`recovered ${recovered}`, `active ${active}`, `deaths ${deaths}`],
+    labels: ["recovered", "active", "deaths"],
     datasets: [
       {
-        label: "# of Votes",
-        data: [recovered, active, deaths],
+        // label: "# of Votes",
+        data: [
+          stateName ? stateData[0].stateRecovered : recovered,
+          stateName ? stateData[0].stateActive : active,
+          stateName ? stateData[0].stateDeaths : deaths,
+        ],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
           "rgba(54, 162, 235, 0.2)",
