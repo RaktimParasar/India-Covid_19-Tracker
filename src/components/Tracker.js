@@ -5,10 +5,11 @@ import Table from "./Table";
 
 const Tracker = ({
   data: { active, confirmed, deaths, recovered, sevenData, statewise },
+  handleMouseEnter,
 }) => {
   //data for Doughnut chart
   const DoughnutData = {
-    labels: ["recovered", "active", "deaths"],
+    labels: [`recovered ${recovered}`, `active ${active}`, `deaths ${deaths}`],
     datasets: [
       {
         label: "# of Votes",
@@ -118,7 +119,7 @@ const Tracker = ({
         <Line data={LineData} />
         {/* {TODO: style changes} */}
       </div>
-      <Table tableData={statewise} />
+      <Table tableData={statewise} handleMouseEnter={handleMouseEnter} />
     </div>
   );
 };

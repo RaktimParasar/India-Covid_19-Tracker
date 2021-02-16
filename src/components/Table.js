@@ -1,4 +1,4 @@
-const Table = ({ tableData }) => {
+const Table = ({ tableData, handleMouseEnter }) => {
   return (
     <div>
       <table>
@@ -14,7 +14,11 @@ const Table = ({ tableData }) => {
         <tbody>
           {tableData &&
             tableData.slice(1).map((item) => (
-              <tr key={item.statecode}>
+              <tr
+                onMouseEnter={() => handleMouseEnter(item.state)}
+                // onMouseLeave={""}
+                key={item.statecode}
+              >
                 <td>{item.state}</td>
                 <td>{item.confirmed}</td>
                 <td>{item.active}</td>

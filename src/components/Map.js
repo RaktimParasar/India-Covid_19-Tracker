@@ -2,7 +2,9 @@ import Countup from "react-countup";
 import Chloropeth from "./Chloropeth";
 const Map = ({
   data: { active, confirmed, deaths, recovered, lastupdatedtime, statewise },
+  country,
 }) => {
+  console.log(country);
   return (
     <div>
       <header>
@@ -10,6 +12,7 @@ const Map = ({
         <p>hover over a state for more details</p>
       </header>
       <div>
+        <div>{country ? <p>Helooooo</p> : null}</div>
         <section className="boxes">
           <div>
             {confirmed ? (
@@ -72,7 +75,7 @@ const Map = ({
           </div>
         </section>
         <section className="chloropeth">
-          <Chloropeth mapData={statewise} />
+          {/* <Chloropeth mapData={statewise} /> */}
         </section>
       </div>
     </div>
