@@ -128,7 +128,7 @@ const Tracker = ({
         <Doughnut data={DoughnutData} options={DoughnutOptions} />
         {/* TODO: add nummbers with countup */}
         <div>
-          <p>{confirmed}</p>
+          <p>{stateName ? stateData[0].stateConfirm : confirmed}</p>
           <p>confirmed</p>
         </div>
       </div>
