@@ -16,7 +16,7 @@ const Table = ({ tableData, handleMouseEnter }) => {
             tableData.slice(1).map((item) => (
               <tr
                 onMouseEnter={() => handleMouseEnter(item.state)}
-                // onMouseLeave={""}
+                onMouseLeave={() => handleMouseEnter()}
                 key={item.statecode}
               >
                 <td>{item.state}</td>

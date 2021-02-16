@@ -2,9 +2,20 @@ import Countup from "react-countup";
 import Chloropeth from "./Chloropeth";
 const Map = ({
   data: { active, confirmed, deaths, recovered, lastupdatedtime, statewise },
-  country,
+  stateName,
 }) => {
-  console.log(country);
+  const singleState =
+    statewise && statewise.filter((items) => items.state === stateName);
+
+  const stateData =
+    singleState &&
+    singleState.map((el) => ({
+      stateConfirm: el.confirmed,
+      stateActive: el.active,
+      stateDeaths: el.deaths,
+      stateRecovered: el.recovered,
+    }));
+
   return (
     <div>
       <header>
@@ -12,7 +23,7 @@ const Map = ({
         <p>hover over a state for more details</p>
       </header>
       <div>
-        <div>{country ? <p>Helooooo</p> : null}</div>
+        <div>{stateName ? <p>{stateData[0].stateActive}</p> : null}</div>
         <section className="boxes">
           <div>
             {confirmed ? (
@@ -20,7 +31,11 @@ const Map = ({
                 <h3>confirmed</h3>
                 <Countup
                   start={0}
-                  end={Number(confirmed)}
+                  end={
+                    stateName
+                      ? Number(stateData[0].stateConfirm)
+                      : Number(confirmed)
+                  }
                   duration={2.5}
                   separator=","
                 />
@@ -33,7 +48,11 @@ const Map = ({
                 <h3>active</h3>
                 <Countup
                   start={0}
-                  end={Number(active)}
+                  end={
+                    stateName
+                      ? Number(stateData[0].stateActive)
+                      : Number(active)
+                  }
                   duration={2.5}
                   separator=","
                 />
@@ -46,7 +65,11 @@ const Map = ({
                 <h3>recovered</h3>
                 <Countup
                   start={0}
-                  end={Number(recovered)}
+                  end={
+                    stateName
+                      ? Number(stateData[0].stateRecovered)
+                      : Number(recovered)
+                  }
                   duration={2.5}
                   separator=","
                 />
@@ -59,7 +82,11 @@ const Map = ({
                 <h3>deceased</h3>
                 <Countup
                   start={0}
-                  end={Number(deaths)}
+                  end={
+                    stateName
+                      ? Number(stateData[0].stateDeaths)
+                      : Number(deaths)
+                  }
                   duration={2.5}
                   separator=","
                 />

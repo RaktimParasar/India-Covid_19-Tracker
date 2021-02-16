@@ -7,7 +7,7 @@ import { fetchData } from "./api";
 class App extends React.Component {
   state = {
     data: {},
-    country: "",
+    stateName: "",
   };
 
   async componentDidMount() {
@@ -15,16 +15,16 @@ class App extends React.Component {
     this.setState({ data });
   }
 
-  handleMouseEnter = async (country) => {
-    const getCountry = await country;
-    this.setState({ country: getCountry });
+  handleMouseEnter = async (stateName) => {
+    const getstateName = await stateName;
+    this.setState({ stateName: getstateName });
   };
   render() {
-    const { data, country } = this.state;
+    const { data, stateName } = this.state;
     return (
       <div className="container">
         <Tracker data={data} handleMouseEnter={this.handleMouseEnter} />
-        <Map data={data} country={country} />
+        <Map data={data} stateName={stateName} />
       </div>
     );
   }
