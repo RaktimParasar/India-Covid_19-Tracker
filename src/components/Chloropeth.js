@@ -39,7 +39,7 @@ const geographyStyle = {
   },
 };
 
-const Chloropeth = ({ mapData }) => {
+const Chloropeth = ({ mapData, handleMouseEnter }) => {
   const modifiedData =
     mapData &&
     mapData.slice(1).map((item) => ({
@@ -70,11 +70,13 @@ const Chloropeth = ({ mapData }) => {
 
   const onMouseEnter = (geo, current = { value: "NA" }) => {
     return () => {
+      handleMouseEnter(geo.properties.name);
       setTooltipContent(`${geo.properties.name}: ${current.value}`);
     };
   };
 
   const onMouseLeave = () => {
+    handleMouseEnter();
     setTooltipContent("");
   };
   return (
@@ -90,6 +92,7 @@ const Chloropeth = ({ mapData }) => {
         <Geographies geography={INDIA_TOPO_JSON}>
           {({ geographies }) =>
             geographies.map((geo) => {
+              // console.log(geo.properties.name);
               const current =
                 modifiedData && modifiedData.find((s) => s.id === geo.id);
               return (

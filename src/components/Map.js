@@ -3,6 +3,7 @@ import Chloropeth from "./Chloropeth";
 const Map = ({
   data: { active, confirmed, deaths, recovered, lastupdatedtime, statewise },
   stateName,
+  handleMouseEnter,
 }) => {
   const singleState =
     statewise && statewise.filter((items) => items.state === stateName);
@@ -103,7 +104,7 @@ const Map = ({
           </div>
         </section>
         <section className="chloropeth">
-          {/* <Chloropeth mapData={statewise} /> */}
+          <Chloropeth mapData={statewise} handleMouseEnter={handleMouseEnter} />
         </section>
       </div>
     </div>

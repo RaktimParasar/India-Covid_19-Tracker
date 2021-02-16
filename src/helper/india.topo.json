@@ -13,7 +13,7 @@
           {
             "type": "MultiPolygon",
             "id": "AN",
-            "properties": { "name": "Andaman & Nicobar Island" },
+            "properties": { "name": "Andaman and Nicobar Islands" },
             "arcs": [
               [[0]],
               [[1]],
@@ -39,7 +39,7 @@
           {
             "type": "Polygon",
             "id": "AR",
-            "properties": { "name": "Arunanchal Pradesh" },
+            "properties": { "name": "Arunachal Pradesh" },
             "arcs": [[19, 20, 21]]
           },
           {
@@ -172,13 +172,13 @@
           {
             "type": "Polygon",
             "id": "DN",
-            "properties": { "name": "Dadara & Nagar Havelli" },
+            "properties": { "name": "Dadra and Nagar Haveli and Daman and Diu" },
             "arcs": [[114, 115]]
           },
           {
             "type": "Polygon",
             "id": "DD",
-            "properties": { "name": "Daman & Diu" },
+            "properties": { "name": "Dadra and Nagar Haveli and Daman and Diu" },
             "arcs": [[116, 117]]
           },
           {
@@ -215,7 +215,7 @@
           {
             "type": "Polygon",
             "id": "JK",
-            "properties": { "name": "Jammu & Kashmir" },
+            "properties": { "name": "Jammu and Kashmir" },
             "arcs": [[-135, -62, 135]]
           },
           {
@@ -281,7 +281,7 @@
           {
             "type": "Polygon",
             "id": "DL",
-            "properties": { "name": "NCT of Delhi" },
+            "properties": { "name": "Delhi" },
             "arcs": [[-88, -132]]
           }
         ]
