@@ -15,8 +15,7 @@
 }
 
 :root {
-  --lightgrey: #f3f4f6;
-  --pluswhite: #f9fafb;
+  --lightgrey: #f7f5f6;
   --greengray: #111827;
 }
 
@@ -43,12 +42,14 @@ img {
   width: 100%;
 }
 
+/* main container */
 .container {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
 }
 
+/* header left */
 .header {
   display: flex;
   max-width: 700px;
@@ -73,15 +74,50 @@ img {
   font-size: 17px;
 }
 
-.chart-container {
-  width: 280px;
-  height: 280px;
-}
-.boxes {
+/* doughnut chart & line chart */
+.charts {
+  background: #fff;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 50px;
+  padding: 20px;
   display: flex;
+  justify-content: space-between;
+  position: relative;
 }
 
-/* .chloropeth {
-  height: 80rem;
-  width: 80rem;
-} */
+.chart__doughnut {
+  width: 300px;
+}
+
+.chart__line {
+  width: 400px;
+}
+
+.chart__doughnut__confirmed {
+  position: absolute;
+  top: 70px;
+  left: 45px;
+}
+
+.confirmed__num {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.confirmed__text {
+  margin-top: 5px;
+  font-weight: 800;
+  padding-left: 5px;
+  color: var(--greengray);
+}
+
+.doughnut__data {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 6.5px;
+  top: 65px;
+  left: 265px;
+  font-size: 13px;
+}

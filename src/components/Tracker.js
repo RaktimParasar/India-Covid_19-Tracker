@@ -1,5 +1,5 @@
 import india from "../assets/india.svg";
-// import Countup from "react-countup";
+import Countup from "react-countup";
 import { Doughnut, Line } from "react-chartjs-2";
 import Table from "./Table";
 
@@ -22,35 +22,39 @@ const Tracker = ({
     }));
   //data for Doughnut chart
   const DoughnutData = {
-    labels: ["recovered", "active", "deaths"],
+    labels: ["active", "deceased", "recovered"],
     datasets: [
       {
-        // label: "# of Votes",
         data: [
-          stateName ? stateData[0].stateRecovered : recovered,
           stateName ? stateData[0].stateActive : active,
           stateName ? stateData[0].stateDeaths : deaths,
+          stateName ? stateData[0].stateRecovered : recovered,
         ],
-        backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-        ],
-        borderColor: [
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-        ],
+        backgroundColor: ["#2563EB", "#9CA3AF", "#10B981"],
+        borderColor: ["#fff", "#fff", "#fff"],
         borderWidth: 1,
+        weight: 20,
       },
     ],
   };
-
   //customize Doughnut chart
   const DoughnutOptions = {
+    responsive: true,
+    layout: {
+      padding: {
+        left: 0,
+        right: 50,
+        top: 0,
+        bottom: 0,
+      },
+    },
     cutoutPercentage: 80,
     legend: {
       position: "right",
+      labels: {
+        fontColor: "#111827",
+        boxWidth: 20,
+      },
     },
   };
 
@@ -124,18 +128,69 @@ const Tracker = ({
           </p>
         </div>
       </header>
-      <div className="chart-container">
-        {/* <Doughnut data={DoughnutData} options={DoughnutOptions} /> */}
-        {/* TODO: add nummbers with countup */}
-        {/* <div>
-          <p>{stateName ? stateData[0].stateConfirm : confirmed}</p>
-          <p>confirmed</p>
-        </div> */}
-      </div>
-      <div>
-        {/* <Line data={LineData} /> */}
-        {/* {TODO: style changes} */}
-      </div>
+      <section className="charts">
+        <article className="chart__doughnut">
+          <Doughnut data={DoughnutData} options={DoughnutOptions} />
+          <div className="chart__doughnut__confirmed">
+            {confirmed ? (
+              <Countup
+                className="confirmed__num"
+                start={0}
+                end={
+                  stateName
+                    ? Number(stateData[0].stateConfirm)
+                    : Number(confirmed)
+                }
+                duration={2.5}
+                separator=","
+              />
+            ) : null}
+            <p className="confirmed__text">Confirmed</p>
+          </div>
+          <div className="doughnut__data">
+            {confirmed ? (
+              <>
+                <Countup
+                  start={0}
+                  end={
+                    stateName
+                      ? Number(stateData[0].stateActive)
+                      : Number(active)
+                  }
+                  duration={2.5}
+                  separator=","
+                />
+                <Countup
+                  start={0}
+                  end={
+                    stateName
+                      ? Number(stateData[0].stateDeaths)
+                      : Number(deaths)
+                  }
+                  duration={2.5}
+                  separator=","
+                />
+                <Countup
+                  start={0}
+                  end={
+                    stateName
+                      ? Number(stateData[0].stateRecovered)
+                      : Number(recovered)
+                  }
+                  duration={2.5}
+                  separator=","
+                />
+              </>
+            ) : null}
+          </div>
+        </article>
+        <article className="chart__line">
+          <div>
+            <Line data={LineData} />
+            {/* {TODO: style changes} */}
+          </div>
+        </article>
+      </section>
       {/* <Table tableData={statewise} handleMouseEnter={handleMouseEnter} /> */}
     </div>
   );
