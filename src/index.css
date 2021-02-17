@@ -17,15 +17,13 @@
 :root {
   --lightgrey: #f3f4f6;
   --pluswhite: #f9fafb;
-  --greengray: #161f20;
+  --greengray: #111827;
 }
 
 body {
   margin: 0;
   padding: 0;
-  display: grid;
-  place-items: start;
-  background: var(--pluswhite);
+  background: var(--lightgrey);
   font-family: "archiaregular", Arial, sans-serif;
 }
 
@@ -48,16 +46,31 @@ img {
 .container {
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .header {
   display: flex;
+  max-width: 700px;
+}
+
+.header__logo__container {
+  padding-top: 5px;
+  margin-right: 15px;
 }
 
 .header__logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+}
+
+.header__title__container {
+  color: var(--greengray);
+}
+
+.header__description {
+  margin-top: 10px;
+  font-size: 17px;
 }
 
 .chart-container {

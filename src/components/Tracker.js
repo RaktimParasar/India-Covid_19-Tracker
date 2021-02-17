@@ -109,34 +109,34 @@ const Tracker = ({
   return (
     <div>
       <header className="header">
-        <div>
+        <div className="header__logo__container">
           <img
             className="header__logo"
             src={india}
             alt="India covid 19 tracker logo"
           />
         </div>
-        <div>
-          <h1>India Covid 19 Tracker</h1>
-          <p>
+        <div className="header__title__container">
+          <h1>INDIA COVID-19 Tracker</h1>
+          <p className="header__description">
             Let's all pray to make our Earth Covid-19 free soon, Stay Safe and
-            do TheLocate
+            do TheLocate.
           </p>
         </div>
       </header>
       <div className="chart-container">
-        <Doughnut data={DoughnutData} options={DoughnutOptions} />
+        {/* <Doughnut data={DoughnutData} options={DoughnutOptions} /> */}
         {/* TODO: add nummbers with countup */}
-        <div>
+        {/* <div>
           <p>{stateName ? stateData[0].stateConfirm : confirmed}</p>
           <p>confirmed</p>
-        </div>
+        </div> */}
       </div>
       <div>
-        <Line data={LineData} />
+        {/* <Line data={LineData} /> */}
         {/* {TODO: style changes} */}
       </div>
-      <Table tableData={statewise} handleMouseEnter={handleMouseEnter} />
+      {/* <Table tableData={statewise} handleMouseEnter={handleMouseEnter} /> */}
     </div>
   );
 };
