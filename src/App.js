@@ -22,18 +22,33 @@ class App extends React.Component {
   render() {
     const { data, stateName } = this.state;
     return (
-      <div className="container">
-        <Tracker
-          data={data}
-          stateName={stateName}
-          handleMouseEnter={this.handleMouseEnter}
-        />
-        <Map
-          data={data}
-          stateName={stateName}
-          handleMouseEnter={this.handleMouseEnter}
-        />
-      </div>
+      <>
+        <div className="container">
+          <Tracker
+            data={data}
+            stateName={stateName}
+            handleMouseEnter={this.handleMouseEnter}
+          />
+          <Map
+            data={data}
+            stateName={stateName}
+            handleMouseEnter={this.handleMouseEnter}
+          />
+        </div>
+        <footer>
+          <p>
+            Made by{" "}
+            <a
+              className="link"
+              href="http://raktimparasar.netlify.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Raktim Parasar
+            </a>
+          </p>
+        </footer>
+      </>
     );
   }
 }

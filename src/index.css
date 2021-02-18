@@ -272,3 +272,16 @@ td {
 .gradient--margin {
   margin-top: 16px;
 }
+
+/* footer */
+footer {
+  padding-top: 50px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.link {
+  color: #2563eb;
+}
