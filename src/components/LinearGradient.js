@@ -9,12 +9,15 @@ const LinearGradient = ({ data }) => {
   };
   return (
     <div>
-      <div style={boxStyle}>
+      <div style={boxStyle} className="linear--gradient box__style">
         <span>{data.min}</span>
         <span className="fill"></span>
         <span>{data.max}</span>
       </div>
-      <div style={{ ...boxStyle, ...gradientStyle }}></div>
+      <div
+        style={{ ...boxStyle, ...gradientStyle }}
+        className="gradient--margin"
+      ></div>
     </div>
   );
 };

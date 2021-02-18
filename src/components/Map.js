@@ -114,9 +114,7 @@ const Map = ({
             </p>
           </div>
         </section>
-        {/* <section className="chloropeth">
-          <Chloropeth mapData={statewise} handleMouseEnter={handleMouseEnter} />
-        </section> */}
+        <Chloropeth mapData={statewise} handleMouseEnter={handleMouseEnter} />
       </div>
     </div>
   );

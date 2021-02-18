@@ -134,7 +134,7 @@ img {
   max-width: 650px;
   overflow-x: auto;
   overflow-y: auto;
-  height: 450px;
+  height: 550px;
 }
 
 .table__container::-webkit-scrollbar {
@@ -191,7 +191,7 @@ td {
   margin-top: 63px;
   padding: 20px;
   width: 100%;
-  height: 800px;
+  height: 772px;
 }
 
 .boxes {
@@ -231,6 +231,7 @@ td {
   font-size: 16px;
 }
 
+/* state name and last updated */
 .state {
   margin-top: 30px;
   display: flex;
@@ -252,4 +253,22 @@ td {
 .date--margin {
   margin-top: 10px;
   font-weight: 800;
+}
+
+/* map */
+.map {
+  margin-top: 40px;
+  padding-right: 20px;
+}
+
+.linear--gradient {
+  display: flex;
+}
+
+.fill {
+  flex: 1;
+}
+
+.gradient--margin {
+  margin-top: 16px;
 }

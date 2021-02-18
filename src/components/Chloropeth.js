@@ -12,15 +12,15 @@ const PROJECTION_CONFIG = {
 };
 
 const COLOR_RANGE = [
-  "#ffedea",
-  "#ffcec5",
-  "#ffad9f",
-  "#ff8a75",
-  "#ff5533",
-  "#e2492d",
-  "#be3d26",
-  "#9a311f",
-  "#782618",
+  "#EFF6FF",
+  "#DBEAFE",
+  "#BFDBFE",
+  "#93C5FD",
+  "#60A5FA",
+  "#3B82F6",
+  "#2563EB",
+  "#1D4ED8",
+  "#1E40AF",
 ];
 
 const DEFAULT_COLOR = "#EEE";
@@ -80,19 +80,18 @@ const Chloropeth = ({ mapData, handleMouseEnter }) => {
     setTooltipContent("");
   };
   return (
-    <div className="map">
+    <section className="map">
       <ReactTooltip>{tooltipContent}</ReactTooltip>
       <ComposableMap
         projectionConfig={PROJECTION_CONFIG}
         projection="geoMercator"
-        width={600}
-        height={220}
+        width={220}
+        height={190}
         data-tip=""
       >
         <Geographies geography={INDIA_TOPO_JSON}>
           {({ geographies }) =>
             geographies.map((geo) => {
-              // console.log(geo.properties.name);
               const current =
                 modifiedData && modifiedData.find((s) => s.id === geo.id);
               return (
@@ -110,7 +109,7 @@ const Chloropeth = ({ mapData, handleMouseEnter }) => {
         </Geographies>
       </ComposableMap>
       <LinearGradient data={gradientData} />
-    </div>
+    </section>
   );
 };
 
