@@ -174,7 +174,6 @@ td {
 }
 
 /* header right */
-
 .header--right {
   color: var(--greengray);
   text-transform: uppercase;
@@ -183,4 +182,50 @@ td {
 .header--right__description {
   margin-top: 10px;
   font-size: 15px;
+}
+
+/* boxes and map */
+.boxesMap__container {
+  background: #fff;
+  border-radius: 20px;
+  margin-top: 63px;
+  padding: 20px;
+  width: 100%;
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.box {
+  width: 130px;
+  padding: 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.box--red {
+  background: #fef2f2;
+  color: #ef4444;
+}
+.box--blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+.box--green {
+  background: #d1fae5;
+  color: #059669;
+}
+.box--gray {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.box--numbers {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 16px;
 }

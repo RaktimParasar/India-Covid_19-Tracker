@@ -26,78 +26,86 @@ const Map = ({
           hover over a state for more details
         </p>
       </header>
-      {/* <div>
+      <div className="boxesMap__container">
         <section className="boxes">
-          <div>
+          <div className="box box--red">
             {confirmed ? (
               <>
                 <h3>confirmed</h3>
-                <Countup
-                  start={0}
-                  end={
-                    stateName
-                      ? Number(stateData[0].stateConfirm)
-                      : Number(confirmed)
-                  }
-                  duration={2.5}
-                  separator=","
-                />
+                <p className="box--numbers">
+                  <Countup
+                    start={0}
+                    end={
+                      stateName
+                        ? Number(stateData[0].stateConfirm)
+                        : Number(confirmed)
+                    }
+                    duration={2.5}
+                    separator=","
+                  />
+                </p>
               </>
             ) : null}
           </div>
-          <div>
+          <div className="box box--blue">
             {active ? (
               <>
                 <h3>active</h3>
-                <Countup
-                  start={0}
-                  end={
-                    stateName
-                      ? Number(stateData[0].stateActive)
-                      : Number(active)
-                  }
-                  duration={2.5}
-                  separator=","
-                />
+                <p className="box--numbers">
+                  <Countup
+                    start={0}
+                    end={
+                      stateName
+                        ? Number(stateData[0].stateActive)
+                        : Number(active)
+                    }
+                    duration={2.5}
+                    separator=","
+                  />
+                </p>
               </>
             ) : null}
           </div>
-          <div>
+          <div className="box box--green">
             {recovered ? (
               <>
                 <h3>recovered</h3>
-                <Countup
-                  start={0}
-                  end={
-                    stateName
-                      ? Number(stateData[0].stateRecovered)
-                      : Number(recovered)
-                  }
-                  duration={2.5}
-                  separator=","
-                />
+                <p className="box--numbers">
+                  <Countup
+                    start={0}
+                    end={
+                      stateName
+                        ? Number(stateData[0].stateRecovered)
+                        : Number(recovered)
+                    }
+                    duration={2.5}
+                    separator=","
+                  />
+                </p>
               </>
             ) : null}
           </div>
-          <div>
+          <div className="box box--gray">
             {deaths ? (
               <>
                 <h3>deceased</h3>
-                <Countup
-                  start={0}
-                  end={
-                    stateName
-                      ? Number(stateData[0].stateDeaths)
-                      : Number(deaths)
-                  }
-                  duration={2.5}
-                  separator=","
-                />
+                <p className="box--numbers">
+                  <Countup
+                    start={0}
+                    end={
+                      stateName
+                        ? Number(stateData[0].stateDeaths)
+                        : Number(deaths)
+                    }
+                    duration={2.5}
+                    separator=","
+                  />
+                </p>
               </>
             ) : null}
           </div>
         </section>
-        <section className="boxes">
+        {/* <section className="boxes">
           <h3>{stateName ? stateName : "India"}</h3>
           <div>
             <h3>Last updated</h3>
@@ -106,8 +114,8 @@ const Map = ({
         </section>
         <section className="chloropeth">
           <Chloropeth mapData={statewise} handleMouseEnter={handleMouseEnter} />
-        </section>
-      </div> */}
+        </section> */}
+      </div>
     </div>
   );
 };
