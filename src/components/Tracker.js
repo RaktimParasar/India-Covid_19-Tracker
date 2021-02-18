@@ -156,7 +156,9 @@ const Tracker = ({
                 duration={2.5}
                 separator=","
               />
-            ) : null}
+            ) : (
+              ""
+            )}
             <p className="confirmed__text">Confirmed</p>
           </div>
           <div className="doughnut__data">
@@ -193,7 +195,9 @@ const Tracker = ({
                   separator=","
                 />
               </>
-            ) : null}
+            ) : (
+              ""
+            )}
           </div>
         </article>
         <article className="chart__line">
