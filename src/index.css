@@ -45,8 +45,9 @@ img {
 /* main container */
 .container {
   display: flex;
-  justify-content: space-between;
-  padding: 1rem;
+  justify-content: flex-start;
+  gap: 35px;
+  padding: 10px;
 }
 
 /* header left */
@@ -156,15 +157,30 @@ table {
   border-collapse: collapse;
   width: 100%;
 }
+
 thead {
   text-transform: uppercase;
   color: #fbbf24;
 }
+
 tbody {
   font-weight: 700;
 }
+
 th,
 td {
   text-align: left;
   padding: 10px;
+}
+
+/* header right */
+
+.header--right {
+  color: var(--greengray);
+  text-transform: uppercase;
+}
+
+.header--right__description {
+  margin-top: 10px;
+  font-size: 15px;
 }

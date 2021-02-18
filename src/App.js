@@ -28,11 +28,11 @@ class App extends React.Component {
           stateName={stateName}
           handleMouseEnter={this.handleMouseEnter}
         />
-        {/* <Map
+        <Map
           data={data}
           stateName={stateName}
           handleMouseEnter={this.handleMouseEnter}
-        /> */}
+        />
       </div>
     );
   }

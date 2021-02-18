@@ -20,12 +20,13 @@ const Map = ({
 
   return (
     <div>
-      <header>
-        <h1>India Map</h1>
-        <p>hover over a state for more details</p>
+      <header className="header--right">
+        <h1 className="header--right__title">india map</h1>
+        <p className="header--right__description">
+          hover over a state for more details
+        </p>
       </header>
-      <div>
-        <div>{stateName ? <p>{stateData[0].stateActive}</p> : null}</div>
+      {/* <div>
         <section className="boxes">
           <div>
             {confirmed ? (
@@ -106,7 +107,7 @@ const Map = ({
         <section className="chloropeth">
           <Chloropeth mapData={statewise} handleMouseEnter={handleMouseEnter} />
         </section>
-      </div>
+      </div> */}
     </div>
   );
 };
