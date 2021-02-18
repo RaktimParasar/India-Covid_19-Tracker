@@ -122,3 +122,33 @@ img {
   left: 265px;
   font-size: 13px;
 }
+
+/* state table */
+.table__container {
+  background: #fff;
+  border-radius: 20px;
+  margin-top: 30px;
+  margin-left: 50px;
+  padding: 20px;
+  max-width: 650px;
+  overflow-x: auto;
+  overflow-y: auto;
+  height: 450px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+thead {
+  text-transform: uppercase;
+  color: #fbbf24;
+}
+tbody {
+  font-weight: 700;
+}
+th,
+td {
+  text-align: left;
+  padding: 10px;
+}

@@ -199,11 +199,10 @@ const Tracker = ({
         <article className="chart__line">
           <div>
             <Line data={LineData} options={LineOptions} />
-            {/* {TODO: style changes} */}
           </div>
         </article>
       </section>
-      {/* <Table tableData={statewise} handleMouseEnter={handleMouseEnter} /> */}
+      <Table tableData={statewise} handleMouseEnter={handleMouseEnter} />
     </div>
   );
 };

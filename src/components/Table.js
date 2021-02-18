@@ -1,6 +1,6 @@
 const Table = ({ tableData, handleMouseEnter }) => {
   return (
-    <div>
+    <div className="table__container">
       <table>
         <thead>
           <tr>
