@@ -102,8 +102,8 @@ const Tracker = ({
     responsive: true,
     layout: {
       padding: {
-        left: 0,
-        right: 45,
+        left: 20,
+        right: 10,
         top: 0,
         bottom: 0,
       },
@@ -113,6 +113,13 @@ const Tracker = ({
     },
     scales: {
       yAxes: [
+        {
+          ticks: {
+            display: false,
+          },
+        },
+      ],
+      xAxes: [
         {
           ticks: {
             display: false,
@@ -201,9 +208,7 @@ const Tracker = ({
           </div>
         </article>
         <article className="chart__line">
-          <div>
-            <Line data={LineData} options={LineOptions} />
-          </div>
+          <Line data={LineData} options={LineOptions} />
         </article>
       </section>
       <Table tableData={statewise} handleMouseEnter={handleMouseEnter} />
