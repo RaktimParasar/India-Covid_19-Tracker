@@ -26,7 +26,7 @@ const Map = ({
           hover over a state for more details
         </p>
       </header>
-      <div className="boxesMap__container">
+      <div className="boxes--map__container">
         <section className="boxes">
           <div className="box box--red">
             {confirmed ? (
@@ -105,14 +105,16 @@ const Map = ({
             ) : null}
           </div>
         </section>
-        {/* <section className="boxes">
-          <h3>{stateName ? stateName : "India"}</h3>
-          <div>
-            <h3>Last updated</h3>
-            <p>{stateName ? stateData[0].stateUpdateTime : lastupdatedtime}</p>
+        <section className="state">
+          <h3 className="state__name">{stateName ? stateName : "India"}</h3>
+          <div className="title--right">
+            <p>Last updated</p>
+            <p className="date--margin">
+              {stateName ? stateData[0].stateUpdateTime : lastupdatedtime}
+            </p>
           </div>
         </section>
-        <section className="chloropeth">
+        {/* <section className="chloropeth">
           <Chloropeth mapData={statewise} handleMouseEnter={handleMouseEnter} />
         </section> */}
       </div>
