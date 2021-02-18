@@ -84,6 +84,7 @@ img {
   display: flex;
   justify-content: space-between;
   position: relative;
+  max-width: 650px;
 }
 
 .chart__doughnut {
@@ -91,7 +92,7 @@ img {
 }
 
 .chart__line {
-  width: 400px;
+  width: 350px;
 }
 
 .chart__doughnut__confirmed {

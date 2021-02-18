@@ -98,17 +98,29 @@ const Tracker = ({
     ],
   };
 
-  // const LineOptions = {
-  //   scales: {
-  //     yAxes: [
-  //       {
-  //         ticks: {
-  //           beginAtZero: true,
-  //         },
-  //       },
-  //     ],
-  //   },
-  // };
+  const LineOptions = {
+    responsive: true,
+    layout: {
+      padding: {
+        left: 0,
+        right: 45,
+        top: 0,
+        bottom: 0,
+      },
+    },
+    legend: {
+      display: false,
+    },
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            display: false,
+          },
+        },
+      ],
+    },
+  };
 
   return (
     <div>
@@ -186,7 +198,7 @@ const Tracker = ({
         </article>
         <article className="chart__line">
           <div>
-            <Line data={LineData} />
+            <Line data={LineData} options={LineOptions} />
             {/* {TODO: style changes} */}
           </div>
         </article>
