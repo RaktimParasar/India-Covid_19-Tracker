@@ -84,11 +84,11 @@ img {
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  position: relative;
   max-width: 650px;
 }
 
 .chart__doughnut {
+  position: relative;
   width: 300px;
 }
 
@@ -98,8 +98,8 @@ img {
 
 .chart__doughnut__confirmed {
   position: absolute;
-  top: 70px;
-  left: 45px;
+  top: 50px;
+  left: 28px;
 }
 
 .confirmed__num {
@@ -119,8 +119,8 @@ img {
   display: flex;
   flex-direction: column;
   gap: 6.5px;
-  top: 65px;
-  left: 265px;
+  top: 45px;
+  left: 245px;
   font-size: 13px;
 }
 
@@ -404,20 +404,20 @@ footer {
   }
 
   .charts {
-    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
   }
+
   .chart__doughnut__confirmed {
     position: absolute;
-    top: 80px;
-    left: 57px;
+    top: 55px;
+    left: 40px;
   }
   .doughnut__data {
     position: absolute;
-    top: 73px;
-    left: 295px;
+    top: 53px;
+    left: 275px;
   }
   .chart__doughnut {
     width: 100%;
@@ -445,8 +445,8 @@ footer {
 @media only screen and (max-width: 375px) {
   .chart__doughnut__confirmed {
     position: absolute;
-    top: 70px;
-    left: 45px;
+    top: 50px;
+    left: 25px;
     font-size: 13px;
   }
 
@@ -456,15 +456,16 @@ footer {
 
   .doughnut__data {
     position: absolute;
-    top: 61px;
-    left: 250px;
+    top: 41px;
+    left: 225px;
   }
 }
+
 @media only screen and (max-width: 320px) {
   .chart__doughnut__confirmed {
     position: absolute;
-    top: 67px;
-    left: 32px;
+    top: 40px;
+    left: 14px;
     font-size: 8px;
   }
 
@@ -474,7 +475,7 @@ footer {
 
   .doughnut__data {
     position: absolute;
-    top: 47px;
-    left: 190px;
+    top: 27px;
+    left: 170px;
   }
 }
