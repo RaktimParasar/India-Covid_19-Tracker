@@ -329,9 +329,9 @@ footer {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
   .header {
-    width: 500px;
+    width: 100%;
   }
   .container {
     display: block;
@@ -339,40 +339,77 @@ footer {
   }
 
   .charts {
+    position: relative;
     display: flex;
     flex-direction: column;
-    width: 480px;
+    width: 100%;
+  }
+  .chart__doughnut__confirmed {
+    position: absolute;
+    top: 80px;
+    left: 57px;
+  }
+  .doughnut__data {
+    position: absolute;
+    top: 73px;
+    left: 295px;
+  }
+  .chart__doughnut {
+    width: 100%;
   }
 
-  .chart__doughnut {
-    width: 400px;
-  }
   .chart__line {
     margin-top: 30px;
-    width: 400px;
-  }
-
-  .chart__doughnut__confirmed {
-    top: 100px;
-    left: 96px;
-    font-size: 18px;
-  }
-
-  .doughnut__data {
-    top: 87px;
-    left: 370px;
-    font-size: 14px;
+    width: 100%;
   }
 
   .table__container {
-    width: 480px;
+    width: 100%;
   }
 
   .boxes--map__container {
-    width: 480px;
+    width: 100%;
   }
 
-  footer {
-    padding-left: 100px;
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .chart__doughnut__confirmed {
+    position: absolute;
+    top: 70px;
+    left: 45px;
+    font-size: 13px;
+  }
+
+  .confirmed__num {
+    font-size: 16px;
+  }
+
+  .doughnut__data {
+    position: absolute;
+    top: 61px;
+    left: 250px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .chart__doughnut__confirmed {
+    position: absolute;
+    top: 67px;
+    left: 32px;
+    font-size: 8px;
+  }
+
+  .confirmed__num {
+    font-size: 10px;
+  }
+
+  .doughnut__data {
+    position: absolute;
+    top: 47px;
+    left: 190px;
   }
 }
