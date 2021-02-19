@@ -319,3 +319,13 @@ footer {
     height: 100%;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .boxes--map__container {
+    width: 700px;
+  }
+}
