@@ -48,7 +48,6 @@ img {
   justify-content: flex-start;
   gap: 15px;
   padding: 10px;
-  width: 100%;
 }
 
 /* header left */
@@ -297,7 +296,7 @@ footer {
 
   .charts {
     margin-left: 0;
-    max-width: 100%;
+    max-width: 850px;
   }
 
   .chart__line {
@@ -306,7 +305,7 @@ footer {
 
   .table__container {
     margin-left: 0;
-    max-width: 100%;
+    max-width: 850px;
   }
 
   .header--right {
@@ -327,5 +326,53 @@ footer {
 
   .boxes--map__container {
     width: 700px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    width: 500px;
+  }
+  .container {
+    display: block;
+    padding-left: 5px;
+  }
+
+  .charts {
+    display: flex;
+    flex-direction: column;
+    width: 480px;
+  }
+
+  .chart__doughnut {
+    width: 400px;
+  }
+  .chart__line {
+    margin-top: 30px;
+    width: 400px;
+  }
+
+  .chart__doughnut__confirmed {
+    top: 100px;
+    left: 96px;
+    font-size: 18px;
+  }
+
+  .doughnut__data {
+    top: 87px;
+    left: 370px;
+    font-size: 14px;
+  }
+
+  .table__container {
+    width: 480px;
+  }
+
+  .boxes--map__container {
+    width: 480px;
+  }
+
+  footer {
+    padding-left: 100px;
   }
 }
