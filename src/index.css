@@ -88,18 +88,11 @@ img {
 }
 
 .chart__doughnut {
-  position: relative;
   width: 300px;
 }
 
 .chart__line {
   width: 300px;
-}
-
-.chart__doughnut__confirmed {
-  position: absolute;
-  top: 50px;
-  left: 28px;
 }
 
 .confirmed__num {
@@ -112,16 +105,6 @@ img {
   font-weight: 800;
   padding-left: 5px;
   color: var(--greengray);
-}
-
-.doughnut__data {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: 6.5px;
-  top: 45px;
-  left: 245px;
-  font-size: 13px;
 }
 
 /* state table */
@@ -409,20 +392,9 @@ footer {
     width: 100%;
   }
 
-  .chart__doughnut__confirmed {
-    position: absolute;
-    top: 55px;
-    left: 40px;
-  }
-  .doughnut__data {
-    position: absolute;
-    top: 53px;
-    left: 275px;
-  }
   .chart__doughnut {
     width: 100%;
   }
-
   .chart__line {
     margin-top: 30px;
     width: 100%;
@@ -439,43 +411,5 @@ footer {
   .boxes {
     display: flex;
     flex-wrap: wrap;
-  }
-}
-
-@media only screen and (max-width: 375px) {
-  .chart__doughnut__confirmed {
-    position: absolute;
-    top: 50px;
-    left: 25px;
-    font-size: 13px;
-  }
-
-  .confirmed__num {
-    font-size: 16px;
-  }
-
-  .doughnut__data {
-    position: absolute;
-    top: 41px;
-    left: 225px;
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  .chart__doughnut__confirmed {
-    position: absolute;
-    top: 40px;
-    left: 14px;
-    font-size: 8px;
-  }
-
-  .confirmed__num {
-    font-size: 10px;
-  }
-
-  .doughnut__data {
-    position: absolute;
-    top: 27px;
-    left: 170px;
   }
 }

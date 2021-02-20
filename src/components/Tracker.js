@@ -1,6 +1,5 @@
 import india from "../assets/india.svg";
-import Countup from "react-countup";
-import { Doughnut, Line } from "react-chartjs-2";
+import { Doughnut, Line, Chart } from "react-chartjs-2";
 import Table from "./Table";
 
 const Tracker = ({
@@ -22,7 +21,11 @@ const Tracker = ({
     }));
   //data for Doughnut chart
   const DoughnutData = {
-    labels: ["active", "deceased", "recovered"],
+    labels: [
+      `active: ${stateName ? stateData[0].stateActive : active}`,
+      `deceased: ${stateName ? stateData[0].stateDeaths : deaths}`,
+      `recovered: ${stateName ? stateData[0].stateRecovered : recovered}`,
+    ],
     datasets: [
       {
         data: [
@@ -33,27 +36,51 @@ const Tracker = ({
         backgroundColor: ["#2563EB", "#9CA3AF", "#10B981"],
         borderColor: ["#fff", "#fff", "#fff"],
         borderWidth: 1,
-        weight: 20,
       },
     ],
+    text: `${stateName ? stateData[0].stateConfirm : confirmed}`,
   };
+  Chart.pluginService.register({
+    id: "p1",
+    beforeDraw: function (chart) {
+      var width = chart.chart.width,
+        height = chart.chart.height,
+        ctx = chart.chart.ctx;
+
+      ctx.restore();
+      ctx.font = "15px archiaregular";
+      ctx.textAlign = "center";
+
+      var text = chart.config.data.text,
+        textX = Math.round((width - ctx.measureText(text).width) / 2 - 50),
+        textY = height / 2;
+      var Nametext = "Confirmed",
+        textA = Math.round((width - ctx.measureText(Nametext).width) / 4 + 10),
+        textB = height / 2 + 20;
+
+      ctx.fillText(text, textX, textY);
+      ctx.fillText(Nametext, textA, textB);
+
+      ctx.save();
+    },
+  });
   //customize Doughnut chart
   const DoughnutOptions = {
     responsive: true,
-    layout: {
-      padding: {
-        left: 0,
-        right: 50,
-        top: 0,
-        bottom: 0,
-      },
-    },
-    cutoutPercentage: 80,
+    maintainAspectRatio: true,
+    cutoutPercentage: 85,
     legend: {
       position: "right",
       labels: {
         fontColor: "#111827",
         boxWidth: 20,
+      },
+    },
+    tooltips: {
+      callbacks: {
+        label: function (tooltipItems, data) {
+          return data.labels[tooltipItems.index];
+        },
       },
     },
   };
@@ -127,6 +154,9 @@ const Tracker = ({
         },
       ],
     },
+    plugins: {
+      p1: false,
+    },
   };
 
   return (
@@ -150,62 +180,6 @@ const Tracker = ({
       <section className="charts">
         <article className="chart__doughnut">
           <Doughnut data={DoughnutData} options={DoughnutOptions} />
-          <div className="chart__doughnut__confirmed">
-            {confirmed ? (
-              <Countup
-                className="confirmed__num"
-                start={0}
-                end={
-                  stateName
-                    ? Number(stateData[0].stateConfirm)
-                    : Number(confirmed)
-                }
-                duration={2.5}
-                separator=","
-              />
-            ) : (
-              ""
-            )}
-            <p className="confirmed__text">Confirmed</p>
-          </div>
-          <div className="doughnut__data">
-            {confirmed ? (
-              <>
-                <Countup
-                  start={0}
-                  end={
-                    stateName
-                      ? Number(stateData[0].stateActive)
-                      : Number(active)
-                  }
-                  duration={2.5}
-                  separator=","
-                />
-                <Countup
-                  start={0}
-                  end={
-                    stateName
-                      ? Number(stateData[0].stateDeaths)
-                      : Number(deaths)
-                  }
-                  duration={2.5}
-                  separator=","
-                />
-                <Countup
-                  start={0}
-                  end={
-                    stateName
-                      ? Number(stateData[0].stateRecovered)
-                      : Number(recovered)
-                  }
-                  duration={2.5}
-                  separator=","
-                />
-              </>
-            ) : (
-              ""
-            )}
-          </div>
         </article>
         <article className="chart__line">
           <Line data={LineData} options={LineOptions} />
