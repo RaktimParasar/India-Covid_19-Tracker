@@ -33,6 +33,7 @@ const geographyStyle = {
     fill: "#ccc",
     transition: "all 250ms",
     outline: "none",
+    cursor: "pointer",
   },
   pressed: {
     outline: "none",

@@ -68,6 +68,9 @@ const Tracker = ({
   const DoughnutOptions = {
     responsive: true,
     maintainAspectRatio: true,
+    onHover: (event, chartElement) => {
+      event.target.style.cursor = chartElement[0] ? "pointer" : "default";
+    },
     cutoutPercentage: 85,
     legend: {
       position: "right",
@@ -127,6 +130,9 @@ const Tracker = ({
 
   const LineOptions = {
     responsive: true,
+    onHover: (event, chartElement) => {
+      event.target.style.cursor = chartElement[0] ? "pointer" : "default";
+    },
     layout: {
       padding: {
         left: 20,

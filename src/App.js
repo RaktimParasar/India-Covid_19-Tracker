@@ -24,6 +24,7 @@ class App extends React.Component {
   };
   render() {
     const { data, stateName, isLoading } = this.state;
+
     return (
       <>
         {!isLoading ? (

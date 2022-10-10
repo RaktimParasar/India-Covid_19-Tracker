@@ -148,6 +148,7 @@ thead {
 
 tbody {
   font-weight: 700;
+  cursor: pointer;
 }
 
 th,
